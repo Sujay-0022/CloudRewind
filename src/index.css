@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: theme('colors.background');
+    color: theme('colors.primary');
+    @apply font-sans antialiased min-h-screen;
+  }
+
+  ::selection {
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@layer components {
+  .surface-panel {
+    @apply bg-surface border border-border rounded-lg shadow-surface overflow-hidden;
+  }
+
+  .surface-button {
+    @apply bg-surface hover:bg-surface-hover border border-border transition-colors duration-150 rounded-md text-sm font-medium text-primary shadow-surface flex items-center justify-center gap-2 px-3 py-1.5;
+  }
+
+  .primary-button {
+    @apply bg-primary hover:bg-primary/90 text-background transition-colors duration-150 rounded-md text-sm font-medium flex items-center justify-center gap-2 px-3 py-1.5;
+  }
+}
